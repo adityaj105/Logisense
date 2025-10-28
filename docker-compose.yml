@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  streamlit:
+    build: ./services/streamlit_app
+    volumes:
+      - ./:/workspace
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - AGENT_HOST=agent_api
+      - AGENT_PORT=8000
+    depends_on:
+      - agent_api
+  agent_api:
+    build: ./services/agent_api
+    volumes:
+      - ./:/workspace
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    ports:
+      - "8000:8000"
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
