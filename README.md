@@ -1,4 +1,4 @@
-# LogiSense - Logistics Solution Designer Agent (Starter) — OFI Solutions Limited
+# LogiSense - Logistics Solution Designer
 
 Quick-start:
 1. Put the seven CSV files into the `data/` folder (orders.csv, delivery_performance.csv, routes_distance.csv, vehicle_fleet.csv, warehouse_inventory.csv, customer_feedback.csv, cost_breakdown.csv).
